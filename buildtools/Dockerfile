@@ -21,7 +21,7 @@ ENV RUSTUP_HOME=/opt/rustup
 ENV PATH=$CARGO_HOME/bin:$PATH
 RUN set -o pipefail && \
     curl -sSf https://sh.rustup.rs | bash -s -- -v -y --no-modify-path && \
-    rustup component add clippy
+    if [[ $(dpkg --print-architecture) = arm64 ]]; then true; else rustup component add clippy; fi
 
 ENV NVM_DIR=/opt/nvm
 ARG NVM_VERSION
