@@ -1,0 +1,7 @@
+version: '3.7'
+services:
+  dockeragent:
+    image: dockeragent
+    build:
+      context: .
+      dockerfile: Dockerfile

@@ -1,0 +1,9 @@
+version: '3.7'
+services:
+  buildtools:
+    image: buildtools
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        NVM_VERSION: v0.34.0
