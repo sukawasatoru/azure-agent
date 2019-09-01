@@ -14,7 +14,7 @@ RUN dpkg --add-architecture armhf && \
     netcat \
     libc6:armhf \
     libstdc++6:armhf \
-    libicu60:armhf && \
+    libicu55:armhf && \
     rm -rf /var/lib/apt/lists/*
 
 WORKDIR /azp
