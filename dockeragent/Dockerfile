@@ -13,7 +13,8 @@ RUN dpkg --add-architecture armhf && \
     libunwind8 \
     netcat \
     libc6:armhf \
-    libstdc++6:armhf && \
+    libstdc++6:armhf \
+    libicu60:armhf && \
     rm -rf /var/lib/apt/lists/*
 
 WORKDIR /azp
