@@ -1,6 +1,6 @@
 FROM buildtools
 
-RUN sudo dpkg --add-architecture armhf && \
+RUN dpkg --add-architecture armhf && \
     apt-get update && \
     apt-get install -y --no-install-recommends \
     ca-certificates \
