@@ -1,6 +1,7 @@
 FROM buildtools
 
-RUN apt-get update && \
+RUN sudo dpkg --add-architecture armhf && \
+    apt-get update && \
     apt-get install -y --no-install-recommends \
     ca-certificates \
     curl \
@@ -10,7 +11,9 @@ RUN apt-get update && \
     libcurl3 \
     libicu55 \
     libunwind8 \
-    netcat && \
+    netcat \
+    libc6:armhf \
+    libstdc++6:armhf && \
     rm -rf /var/lib/apt/lists/*
 
 WORKDIR /azp
